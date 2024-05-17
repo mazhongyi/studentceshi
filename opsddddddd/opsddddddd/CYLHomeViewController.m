@@ -20,6 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.zx_navBarBackgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [UIColor greenColor];
+    
+    
+    
 //    self.view.backgroundColor = [UIColor whiteColor];
 //    self.navigationItem.title = @"首页(3)"; //✅sets navigation bar title.The right way to set the title of the navigation
 //    self.tabBarItem.title = @"首页";   //❌sets tab bar title. Even the `tabBarItem.title` changed, this will be ignored in tabbar.
@@ -126,10 +130,10 @@
 }
 
 - (void)pushToNewViewController {
-    CYLBaseViewController *viewController = [CYLBaseViewController new];
-    viewController.view.backgroundColor = [UIColor orangeColor];
-    [viewController cyl_setNavigationBarHidden:YES];
-    [self.navigationController  pushViewController:viewController animated:YES];
+//    CYLBaseViewController *viewController = [CYLBaseViewController new];
+//    viewController.view.backgroundColor = [UIColor orangeColor];
+//    [viewController cyl_setNavigationBarHidden:YES];
+//    [self.navigationController  pushViewController:viewController animated:YES];
 }
 
 @end

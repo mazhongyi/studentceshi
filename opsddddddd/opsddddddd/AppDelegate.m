@@ -32,12 +32,12 @@
 //    CustomTabBarController *rootViewController = [[CustomTabBarController alloc] init];
 //    [self.window setRootViewController:rootViewController];
 //    [self.window makeKeyAndVisible];
-    
+    //    ZXNavigationBarNavigationController *nav = [[ZXNavigationBarNavigationController alloc]initWithRootViewController:vc];
     
     UIWindow *window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    CYLHomeViewController *vc = [[CYLHomeViewController alloc]init];
-    ZXNavigationBarNavigationController *nav = [[ZXNavigationBarNavigationController alloc]initWithRootViewController:vc];
-    window.rootViewController = nav;
+    CustomTabBarController *vc = [[CustomTabBarController alloc]init];
+//    ZXNavigationBarNavigationController *nav = [[ZXNavigationBarNavigationController alloc]initWithRootViewController:vc];
+    window.rootViewController = vc;
     [window makeKeyAndVisible];
     self.window = window;
     return YES;

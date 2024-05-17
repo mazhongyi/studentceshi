@@ -28,6 +28,7 @@
 		587563E62BF7748300287E3C /* ZXNavigationBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 587563CE2BF7748300287E3C /* ZXNavigationBarController.m */; };
 		587563E72BF7748300287E3C /* ZXNavigationBarNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 587563D12BF7748300287E3C /* ZXNavigationBarNavigationController.m */; };
 		587563E82BF7748300287E3C /* ZXNavigationBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 587563D32BF7748300287E3C /* ZXNavigationBarTableViewController.m */; };
+		587563EB2BF7958D00287E3C /* secondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 587563EA2BF7958D00287E3C /* secondViewController.m */; };
 		58A69BB82BF661C000FD1113 /* CYLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A69BB62BF661C000FD1113 /* CYLHomeViewController.m */; };
 		58B393EF2BF50BFE00876663 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B393EE2BF50BFE00876663 /* AppDelegate.m */; };
 		58B393FA2BF50BFF00876663 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B393F92BF50BFF00876663 /* Assets.xcassets */; };
@@ -122,6 +123,8 @@
 		587563D12BF7748300287E3C /* ZXNavigationBarNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXNavigationBarNavigationController.m; sourceTree = "<group>"; };
 		587563D22BF7748300287E3C /* ZXNavigationBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXNavigationBarTableViewController.h; sourceTree = "<group>"; };
 		587563D32BF7748300287E3C /* ZXNavigationBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXNavigationBarTableViewController.m; sourceTree = "<group>"; };
+		587563E92BF7958D00287E3C /* secondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = secondViewController.h; sourceTree = "<group>"; };
+		587563EA2BF7958D00287E3C /* secondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = secondViewController.m; sourceTree = "<group>"; };
 		58A69BB62BF661C000FD1113 /* CYLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLHomeViewController.m; sourceTree = "<group>"; };
 		58A69BB72BF661C000FD1113 /* CYLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLHomeViewController.h; sourceTree = "<group>"; };
 		58B393EA2BF50BFE00876663 /* opsddddddd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = opsddddddd.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -333,6 +336,8 @@
 				58B393EE2BF50BFE00876663 /* AppDelegate.m */,
 				58B3942B2BF6085800876663 /* MainTabBarController.h */,
 				58B3942C2BF6085800876663 /* MainTabBarController.m */,
+				587563E92BF7958D00287E3C /* secondViewController.h */,
+				587563EA2BF7958D00287E3C /* secondViewController.m */,
 				58A69BB72BF661C000FD1113 /* CYLHomeViewController.h */,
 				58A69BB62BF661C000FD1113 /* CYLHomeViewController.m */,
 				58B3942E2BF608F400876663 /* CYLPlusButtonSubclass.h */,
@@ -677,6 +682,7 @@
 				58B3942D2BF6085900876663 /* MainTabBarController.m in Sources */,
 				58B3942A2BF5E3A300876663 /* CustomTabBarController.m in Sources */,
 				587563E32BF7748300287E3C /* ZXNavTitleView.m in Sources */,
+				587563EB2BF7958D00287E3C /* secondViewController.m in Sources */,
 				587563E52BF7748300287E3C /* ZXNavigationBar.m in Sources */,
 				587563DD2BF7748300287E3C /* ZXNavHistoryStackCell.m in Sources */,
 				58A69BB82BF661C000FD1113 /* CYLHomeViewController.m in Sources */,

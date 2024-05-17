@@ -8,6 +8,7 @@
 #import "MainTabBarController.h"
 #import <UIKit/UIKit.h>
 
+#import "ZXNavigationBarController.h"
 static CGFloat const CYLTabBarControllerHeight = 40.f;
 
 //View Controllers
@@ -17,6 +18,8 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
 //#import "CYLSameCityViewController.h"
 
 #import "CYLHomeViewController.h"
+#import "secondViewController.h"
+
 
 #define RANDOM_COLOR [UIColor colorWithHue: (arc4random() % 256 / 256.0) saturation:((arc4random()% 128 / 256.0 ) + 0.5) brightness:(( arc4random() % 128 / 256.0 ) + 0.5) alpha:1]
 
@@ -51,6 +54,7 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
     [self becomeFirstResponder];
     [self customizeInterface];
@@ -58,29 +62,35 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
 
 - (NSArray *)viewControllersForTabBar {
     CYLHomeViewController *firstViewController = [[CYLHomeViewController alloc] init];
-    UIViewController *firstNavigationController = [[CYLBaseNavigationController alloc]
-                                                   initWithRootViewController:firstViewController];
-    [firstViewController cyl_setHideNavigationBarSeparator:YES];
-    [firstViewController cyl_setNavigationBarHidden:NO];
-    UIViewController *secondViewController = [[UIViewController alloc] init];
-    UIViewController *secondNavigationController = [[CYLBaseNavigationController alloc]
-                                                    initWithRootViewController:secondViewController];
-    [secondViewController cyl_setHideNavigationBarSeparator:YES];
-    [secondViewController cyl_setNavigationBarHidden:NO];
+//    UIViewController *firstNavigationController = [[ZXNavigationBarController alloc]
+//                                                   initWithRootViewController:firstViewController];
+//    [firstViewController cyl_setHideNavigationBarSeparator:YES];
+//    [firstViewController cyl_setNavigationBarHidden:NO];
+    secondViewController *secondVC = [[secondViewController alloc] init];
+//    UIViewController *secondNavigationController = [[CYLBaseNavigationController alloc]
+//                                                    initWithRootViewController:secondViewController];
+//    [secondViewController cyl_setHideNavigationBarSeparator:YES];
+//    [secondViewController cyl_setNavigationBarHidden:NO];
     
     UIViewController *thirdViewController = [[UIViewController alloc] init];
     UIViewController *thirdNavigationController = [[CYLBaseNavigationController alloc]
                                                    initWithRootViewController:thirdViewController];
-    [thirdViewController cyl_setHideNavigationBarSeparator:YES];
+//    [thirdViewController cyl_setHideNavigationBarSeparator:YES];
     UIViewController *fourthViewController = [[UIViewController alloc] init];
     UIViewController *fourthNavigationController = [[CYLBaseNavigationController alloc]
                                                     initWithRootViewController:fourthViewController];
-    [fourthNavigationController cyl_setHideNavigationBarSeparator:YES];
+//    [fourthNavigationController cyl_setHideNavigationBarSeparator:YES];
+//    NSArray *viewControllers = @[
+//        firstNavigationController,
+//        secondNavigationController,
+//        thirdNavigationController,
+//        fourthNavigationController
+//    ];
     NSArray *viewControllers = @[
-        firstNavigationController,
-        secondNavigationController,
-        thirdNavigationController,
-        fourthNavigationController
+        firstViewController,
+        secondVC,
+        thirdViewController,
+        fourthViewController
     ];
     return viewControllers;
 }
