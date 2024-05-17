@@ -16,6 +16,8 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
 //#import "CYLMineViewController.h"
 //#import "CYLSameCityViewController.h"
 
+#import "CYLHomeViewController.h"
+
 #define RANDOM_COLOR [UIColor colorWithHue: (arc4random() % 256 / 256.0) saturation:((arc4random()% 128 / 256.0 ) + 0.5) brightness:(( arc4random() % 128 / 256.0 ) + 0.5) alpha:1]
 
 @interface MainTabBarController ()<UITabBarControllerDelegate>
@@ -39,7 +41,7 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
                                   imageInsets:imageInsets
                       titlePositionAdjustment:titlePositionAdjustment
                                       context:context
-                ]) {
+               ]) {
         [self customizeTabBarAppearanceWithTitlePositionAdjustment:titlePositionAdjustment];
         self.delegate = self;
         self.navigationController.navigationBar.hidden = YES;
@@ -55,17 +57,17 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
 }
 
 - (NSArray *)viewControllersForTabBar {
-    UIViewController *firstViewController = [[UIViewController alloc] init];
+    CYLHomeViewController *firstViewController = [[CYLHomeViewController alloc] init];
     UIViewController *firstNavigationController = [[CYLBaseNavigationController alloc]
                                                    initWithRootViewController:firstViewController];
     [firstViewController cyl_setHideNavigationBarSeparator:YES];
-    // [firstViewController cyl_setNavigationBarHidden:YES];
+    [firstViewController cyl_setNavigationBarHidden:NO];
     UIViewController *secondViewController = [[UIViewController alloc] init];
     UIViewController *secondNavigationController = [[CYLBaseNavigationController alloc]
                                                     initWithRootViewController:secondViewController];
     [secondViewController cyl_setHideNavigationBarSeparator:YES];
-    // [secondViewController cyl_setNavigationBarHidden:YES];
-
+    [secondViewController cyl_setNavigationBarHidden:NO];
+    
     UIViewController *thirdViewController = [[UIViewController alloc] init];
     UIViewController *thirdNavigationController = [[CYLBaseNavigationController alloc]
                                                    initWithRootViewController:thirdViewController];
@@ -75,11 +77,11 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
                                                     initWithRootViewController:fourthViewController];
     [fourthNavigationController cyl_setHideNavigationBarSeparator:YES];
     NSArray *viewControllers = @[
-                                 firstNavigationController,
-                                 secondNavigationController,
-                                 thirdNavigationController,
-                                 fourthNavigationController
-                                 ];
+        firstNavigationController,
+        secondNavigationController,
+        thirdNavigationController,
+        fourthNavigationController
+    ];
     return viewControllers;
 }
 
@@ -87,46 +89,46 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
     // lottie动画的json文件来自于NorthSea, respect!
     CGFloat firstXOffset = -12/2;
     NSDictionary *firstTabBarItemsAttributes = @{
-                                                 CYLTabBarItemTitle : @"首页",
-                                                 CYLTabBarItemImage : [[UIImage imageNamed:@"home_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],  /* NSString and UIImage are supported*/
-                                                 CYLTabBarItemSelectedImage : @"home_highlight",  /* NSString and UIImage are supported*/
-                                                 CYLTabBarItemTitlePositionAdjustment: [NSValue valueWithUIOffset:UIOffsetMake(firstXOffset, -3.5)],
-                                                 //第一位 右大，下大
-                                                 CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_home" ofType:@"json"]],
-//                                                 CYLTabBarLottieSize: [NSValue valueWithCGSize:CGSizeMake(22, 22)]
-                                                 };
+        CYLTabBarItemTitle : @"首页",
+        CYLTabBarItemImage : [[UIImage imageNamed:@"home_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],  /* NSString and UIImage are supported*/
+        CYLTabBarItemSelectedImage : @"home_highlight",  /* NSString and UIImage are supported*/
+        CYLTabBarItemTitlePositionAdjustment: [NSValue valueWithUIOffset:UIOffsetMake(firstXOffset, -3.5)],
+        //第一位 右大，下大
+        CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_home" ofType:@"json"]],
+        //                                                 CYLTabBarLottieSize: [NSValue valueWithCGSize:CGSizeMake(22, 22)]
+    };
     CGFloat secondXOffset = (-25+2)/2;
     NSDictionary *secondTabBarItemsAttributes = @{
-                                                  CYLTabBarItemTitle : @"鱼塘",
-                                                  CYLTabBarItemImage : [[UIImage imageNamed:@"fishpond_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                                                  CYLTabBarItemSelectedImage : @"fishpond_highlight",
-                                                  CYLTabBarItemTitlePositionAdjustment: [NSValue valueWithUIOffset:UIOffsetMake(secondXOffset, -3.5)],
-                                                  CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_discover" ofType:@"json"]],
-//                                                  CYLTabBarLottieSize: [NSValue valueWithCGSize:CGSizeMake(33, 33)]
-                                                  };
+        CYLTabBarItemTitle : @"鱼塘",
+        CYLTabBarItemImage : [[UIImage imageNamed:@"fishpond_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+        CYLTabBarItemSelectedImage : @"fishpond_highlight",
+        CYLTabBarItemTitlePositionAdjustment: [NSValue valueWithUIOffset:UIOffsetMake(secondXOffset, -3.5)],
+        CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_discover" ofType:@"json"]],
+        //                                                  CYLTabBarLottieSize: [NSValue valueWithCGSize:CGSizeMake(33, 33)]
+    };
     
     NSDictionary *thirdTabBarItemsAttributes = @{
-                                                 CYLTabBarItemTitle : @"消息",
-                                                 CYLTabBarItemImage : [[UIImage imageNamed:@"message_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                                                 CYLTabBarItemSelectedImage : @"message_highlight",
-                                                 CYLTabBarItemTitlePositionAdjustment: [NSValue valueWithUIOffset:UIOffsetMake(-secondXOffset, -3.5)],
-                                                 CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_news" ofType:@"json"]],
-//                                                 CYLTabBarLottieSize: [NSValue valueWithCGSize:CGSizeMake(44, 44)]
-                                                 };
+        CYLTabBarItemTitle : @"消息",
+        CYLTabBarItemImage : [[UIImage imageNamed:@"message_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+        CYLTabBarItemSelectedImage : @"message_highlight",
+        CYLTabBarItemTitlePositionAdjustment: [NSValue valueWithUIOffset:UIOffsetMake(-secondXOffset, -3.5)],
+        CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_news" ofType:@"json"]],
+        //                                                 CYLTabBarLottieSize: [NSValue valueWithCGSize:CGSizeMake(44, 44)]
+    };
     NSDictionary *fourthTabBarItemsAttributes = @{
-                                                  CYLTabBarItemTitle : @"我的",
-                                                  CYLTabBarItemImage : [[UIImage imageNamed:@"account_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                                                  CYLTabBarItemSelectedImage : @"account_highlight",
-                                                  CYLTabBarItemTitlePositionAdjustment: [NSValue valueWithUIOffset:UIOffsetMake(-firstXOffset, -3.5)],
-                                                  CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_mine" ofType:@"json"]],
-//                                                  CYLTabBarLottieSize: [NSValue valueWithCGSize:CGSizeMake(22, 22)]
-                                                  };
+        CYLTabBarItemTitle : @"我的",
+        CYLTabBarItemImage : [[UIImage imageNamed:@"account_normal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+        CYLTabBarItemSelectedImage : @"account_highlight",
+        CYLTabBarItemTitlePositionAdjustment: [NSValue valueWithUIOffset:UIOffsetMake(-firstXOffset, -3.5)],
+        CYLTabBarLottieURL : [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"green_lottie_tab_mine" ofType:@"json"]],
+        //                                                  CYLTabBarLottieSize: [NSValue valueWithCGSize:CGSizeMake(22, 22)]
+    };
     NSArray *tabBarItemsAttributes = @[
-                                       firstTabBarItemsAttributes,
-                                       secondTabBarItemsAttributes,
-                                       thirdTabBarItemsAttributes,
-                                       fourthTabBarItemsAttributes
-                                       ];
+        firstTabBarItemsAttributes,
+        secondTabBarItemsAttributes,
+        thirdTabBarItemsAttributes,
+        fourthTabBarItemsAttributes
+    ];
     return tabBarItemsAttributes;
 }
 
@@ -151,7 +153,7 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
     NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
     selectedAttrs[NSForegroundColorAttributeName] = [UIColor cyl_labelColor];
     //selectedAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:10];
-
+    
     // Set the dark color to selected tab (the dimmed background)
     // TabBarItem选中后的背景颜色
     // [self customizeTabBarSelectionIndicatorImage];
@@ -160,12 +162,12 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
     // If your app need support UIDeviceOrientationLandscapeLeft or UIDeviceOrientationLandscapeRight，
     // remove the comment '//'
     // 如果你的App需要支持横竖屏，请使用该方法移除注释 '//'
-//     [self updateTabBarCustomizationWhenTabBarItemWidthDidUpdate];
+    //     [self updateTabBarCustomizationWhenTabBarItemWidthDidUpdate];
     
     // set background color
     // 设置 TabBar 背景
     // 半透明
-//    [UITabBar appearance].translucent = YES;
+    //    [UITabBar appearance].translucent = YES;
     // [UITabBar appearance].barTintColor = [UIColor cyl_systemBackgroundColor];
     // [[UITabBar appearance] setBackgroundColor:[UIColor cyl_systemBackgroundColor]];
     
@@ -192,12 +194,12 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
         UITabBarItemAppearance *inlineLayoutAppearance = [[UITabBarItemAppearance  alloc] init];
         // fix https://github.com/ChenYilong/CYLTabBarController/issues/456
         inlineLayoutAppearance.normal.titlePositionAdjustment = titlePositionAdjustment;
-
+        
         // set the text Attributes
         // 设置文字属性
         [inlineLayoutAppearance.normal setTitleTextAttributes:normalAttrs];
         [inlineLayoutAppearance.selected setTitleTextAttributes:selectedAttrs];
-
+        
         UITabBarAppearance *standardAppearance = [[UITabBarAppearance alloc] init];
         standardAppearance.stackedLayoutAppearance = inlineLayoutAppearance;
         standardAppearance.backgroundColor = [UIColor cyl_systemBackgroundColor];
@@ -313,7 +315,7 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
 
 - (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection  {
     [super traitCollectionDidChange:previousTraitCollection];
-    #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
     if (@available(iOS 13.0, *)) {
 #if __has_include(<UIKit/UIScene.h>)
         UIUserInterfaceStyle currentUserInterfaceStyle = [UITraitCollection currentTraitCollection].userInterfaceStyle;
@@ -325,14 +327,14 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
         //TODO:
         [[UIViewController cyl_topmostViewController].navigationController.navigationBar setBarTintColor:[UIColor cyl_systemBackgroundColor]];
     }
-    #endif
+#endif
     
 }
 
 - (void)customizeInterface {
     //设置导航栏
     //    [self setUpNavigationBarAppearance];
-//     [self hideTabBarShadowImageView];
+    //     [self hideTabBarShadowImageView];
     //#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
     //    if (@available(iOS 13.0, *)) {
     //        tabBarController.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
