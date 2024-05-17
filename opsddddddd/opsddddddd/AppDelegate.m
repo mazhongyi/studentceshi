@@ -8,6 +8,12 @@
 #import "AppDelegate.h"
 //#import "CYLPlusButtonSubclass.h"
 #import "CustomTabBarController.h"
+
+#import "ZXNavigationBarNavigationController.h"
+#import "CYLHomeViewController.h"
+
+
+
 @interface AppDelegate ()
 
 @end
@@ -17,16 +23,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [UIApplication sharedApplication].statusBarHidden = NO;
-//    [self setUpNavigationBarAppearance];
-    // 设置主窗口,并设置根控制器
-    self.window = [[UIWindow alloc] init];
-    self.window.frame = [UIScreen mainScreen].bounds;
-   
-    CustomTabBarController *rootViewController = [[CustomTabBarController alloc] init];
-    [self.window setRootViewController:rootViewController];
-    [self.window makeKeyAndVisible];
+//    [UIApplication sharedApplication].statusBarHidden = NO;
+////    [self setUpNavigationBarAppearance];
+//    // 设置主窗口,并设置根控制器
+//    self.window = [[UIWindow alloc] init];
+//    self.window.frame = [UIScreen mainScreen].bounds;
+//   
+//    CustomTabBarController *rootViewController = [[CustomTabBarController alloc] init];
+//    [self.window setRootViewController:rootViewController];
+//    [self.window makeKeyAndVisible];
+    
+    
+    UIWindow *window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    CYLHomeViewController *vc = [[CYLHomeViewController alloc]init];
+    ZXNavigationBarNavigationController *nav = [[ZXNavigationBarNavigationController alloc]initWithRootViewController:vc];
+    window.rootViewController = nav;
+    [window makeKeyAndVisible];
+    self.window = window;
     return YES;
+  
 }
 
 #pragma clang diagnostic push
