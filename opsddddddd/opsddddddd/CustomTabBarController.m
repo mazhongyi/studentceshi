@@ -13,8 +13,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationBarHidden = YES;
-    self.view.backgroundColor = [UIColor whiteColor];
+   self.navigationBarHidden = YES;
+//    self.view.backgroundColor = [UIColor whiteColor];
     [self createNewTabBar];
 }
 

@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+//    self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"首页(3)"; //✅sets navigation bar title.The right way to set the title of the navigation
     self.tabBarItem.title = @"首页";   //❌sets tab bar title. Even the `tabBarItem.title` changed, this will be ignored in tabbar.
     //self.title = @"首页1";                //❌sets both of these. Do not do this‼️‼️This may cause something strange like this : http://i68.tinypic.com/282l3x4.jpg .
@@ -34,6 +34,20 @@
 //            [weakSelf.tableView.mj_header endRefreshing];
 //        });
 //    }];
+    
+    if (@available(iOS 15.0, *)) {
+            UINavigationBarAppearance *appperance = [[UINavigationBarAppearance alloc] init];
+            //添加背景色
+            appperance.backgroundColor = [UIColor redColor];
+            appperance.shadowImage = [[UIImage alloc]init];
+            appperance.shadowColor = nil;
+            //设置字体颜色大小
+//            [appperance setTitleTextAttributes:@{NSForegroundColorAttributeName:k_title_color,NSFontAttributeName:TEXT_BIG_S_FONT18}];
+            self.navigationController.navigationBar.standardAppearance = appperance;
+            self.navigationController.navigationBar.scrollEdgeAppearance = appperance;
+            self.navigationController.navigationBar.compactAppearance = appperance;
+            self.navigationController.navigationBar.compactScrollEdgeAppearance = appperance;
+        }
 }
 
 - (void)refresh {
