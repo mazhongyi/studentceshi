@@ -177,7 +177,9 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
     // set background color
     // 设置 TabBar 背景
     // 半透明
-    //    [UITabBar appearance].translucent = YES;
+    /// 设置Tab Bar不透明
+   // tabBar.translucent = NO;
+       [UITabBar appearance].translucent = false;
     // [UITabBar appearance].barTintColor = [UIColor cyl_systemBackgroundColor];
     // [[UITabBar appearance] setBackgroundColor:[UIColor cyl_systemBackgroundColor]];
     
