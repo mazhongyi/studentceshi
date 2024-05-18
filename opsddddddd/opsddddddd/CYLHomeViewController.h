@@ -13,8 +13,8 @@
 #import "CYLTabBarController.h"
 #endif
 
-@interface CYLHomeViewController : ZXNavigationBarController <UITabBarControllerDelegate>
+@interface CYLHomeViewController : UIViewController
 
-- (void)refresh;
+
 
 @end

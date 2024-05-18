@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		491B8F5B8D865B9185C1FE46 /* Pods_opsddddddd_opsdddddddUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D905A9BEF5E0175996C9A281 /* Pods_opsddddddd_opsdddddddUITests.framework */; };
+		587038362BF8E2D5008E12CB /* threeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 587038352BF8E2D5008E12CB /* threeViewController.m */; };
+		5870383F2BF8F183008E12CB /* WRImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 587038382BF8F183008E12CB /* WRImageHelper.m */; };
+		587038402BF8F183008E12CB /* WRCustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870383B2BF8F183008E12CB /* WRCustomNavigationBar.m */; };
+		587038412BF8F183008E12CB /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870383D2BF8F183008E12CB /* WRNavigationBar.m */; };
 		587563D52BF7748300287E3C /* NSAttributedString+ZXNavCalcSizeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 587563A72BF7748300287E3C /* NSAttributedString+ZXNavCalcSizeExtension.m */; };
 		587563D62BF7748300287E3C /* NSString+ZXNavCalcSizeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 587563A92BF7748300287E3C /* NSString+ZXNavCalcSizeExtension.m */; };
 		587563D72BF7748300287E3C /* UIImage+ZXNavBundleExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 587563AB2BF7748300287E3C /* UIImage+ZXNavBundleExtension.m */; };
@@ -83,6 +87,14 @@
 		4BD30E0A9330B3E53D75F87F /* Pods-opsddddddd-opsdddddddUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opsddddddd-opsdddddddUITests.debug.xcconfig"; path = "Target Support Files/Pods-opsddddddd-opsdddddddUITests/Pods-opsddddddd-opsdddddddUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		50E0754A47FBD56B01045342 /* Pods_opsddddddd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_opsddddddd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E3F06C9C879502044DAF84 /* Pods-opsddddddd-opsdddddddUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opsddddddd-opsdddddddUITests.release.xcconfig"; path = "Target Support Files/Pods-opsddddddd-opsdddddddUITests/Pods-opsddddddd-opsdddddddUITests.release.xcconfig"; sourceTree = "<group>"; };
+		587038342BF8E2D5008E12CB /* threeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = threeViewController.h; sourceTree = "<group>"; };
+		587038352BF8E2D5008E12CB /* threeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = threeViewController.m; sourceTree = "<group>"; };
+		587038372BF8F183008E12CB /* WRImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRImageHelper.h; sourceTree = "<group>"; };
+		587038382BF8F183008E12CB /* WRImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRImageHelper.m; sourceTree = "<group>"; };
+		5870383A2BF8F183008E12CB /* WRCustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCustomNavigationBar.h; sourceTree = "<group>"; };
+		5870383B2BF8F183008E12CB /* WRCustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCustomNavigationBar.m; sourceTree = "<group>"; };
+		5870383C2BF8F183008E12CB /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
+		5870383D2BF8F183008E12CB /* WRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRNavigationBar.m; sourceTree = "<group>"; };
 		587563A62BF7748300287E3C /* NSAttributedString+ZXNavCalcSizeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+ZXNavCalcSizeExtension.h"; sourceTree = "<group>"; };
 		587563A72BF7748300287E3C /* NSAttributedString+ZXNavCalcSizeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+ZXNavCalcSizeExtension.m"; sourceTree = "<group>"; };
 		587563A82BF7748300287E3C /* NSString+ZXNavCalcSizeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZXNavCalcSizeExtension.h"; sourceTree = "<group>"; };
@@ -210,6 +222,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		587038392BF8F183008E12CB /* WRImageHelper */ = {
+			isa = PBXGroup;
+			children = (
+				587038372BF8F183008E12CB /* WRImageHelper.h */,
+				587038382BF8F183008E12CB /* WRImageHelper.m */,
+			);
+			path = WRImageHelper;
+			sourceTree = "<group>";
+		};
+		5870383E2BF8F183008E12CB /* WRNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				5870383A2BF8F183008E12CB /* WRCustomNavigationBar.h */,
+				5870383B2BF8F183008E12CB /* WRCustomNavigationBar.m */,
+				5870383C2BF8F183008E12CB /* WRNavigationBar.h */,
+				5870383D2BF8F183008E12CB /* WRNavigationBar.m */,
+			);
+			path = WRNavigationBar;
+			sourceTree = "<group>";
+		};
 		587563B42BF7748300287E3C /* ZXNavigationBarCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +362,8 @@
 		58B393EC2BF50BFE00876663 /* opsddddddd */ = {
 			isa = PBXGroup;
 			children = (
+				587038392BF8F183008E12CB /* WRImageHelper */,
+				5870383E2BF8F183008E12CB /* WRNavigationBar */,
 				587563D42BF7748300287E3C /* ZXNavigationBar */,
 				58B394432BF60A0D00876663 /* LottieResources */,
 				58B393ED2BF50BFE00876663 /* AppDelegate.h */,
@@ -338,6 +372,8 @@
 				58B3942C2BF6085800876663 /* MainTabBarController.m */,
 				587563E92BF7958D00287E3C /* secondViewController.h */,
 				587563EA2BF7958D00287E3C /* secondViewController.m */,
+				587038342BF8E2D5008E12CB /* threeViewController.h */,
+				587038352BF8E2D5008E12CB /* threeViewController.m */,
 				58A69BB72BF661C000FD1113 /* CYLHomeViewController.h */,
 				58A69BB62BF661C000FD1113 /* CYLHomeViewController.m */,
 				58B3942E2BF608F400876663 /* CYLPlusButtonSubclass.h */,
@@ -675,6 +711,7 @@
 				587563D62BF7748300287E3C /* NSString+ZXNavCalcSizeExtension.m in Sources */,
 				587563E02BF7748300287E3C /* ZXNavBacImageView.m in Sources */,
 				587563E62BF7748300287E3C /* ZXNavigationBarController.m in Sources */,
+				587038402BF8F183008E12CB /* WRCustomNavigationBar.m in Sources */,
 				587563D82BF7748300287E3C /* UIImage+ZXNavColorRender.m in Sources */,
 				587563DF2BF7748300287E3C /* ZXNavHistoryStackView.m in Sources */,
 				587563DB2BF7748300287E3C /* ZXNavigationBarController+ZXNavSystemBarPopHandle.m in Sources */,
@@ -688,8 +725,11 @@
 				58A69BB82BF661C000FD1113 /* CYLHomeViewController.m in Sources */,
 				587563DC2BF7748300287E3C /* ZXNavHistoryStackModel.m in Sources */,
 				587563E12BF7748300287E3C /* ZXNavItemBtn.m in Sources */,
+				5870383F2BF8F183008E12CB /* WRImageHelper.m in Sources */,
 				58B394002BF50BFF00876663 /* main.m in Sources */,
 				587563E22BF7748300287E3C /* ZXNavTitleLabel.m in Sources */,
+				587038412BF8F183008E12CB /* WRNavigationBar.m in Sources */,
+				587038362BF8E2D5008E12CB /* threeViewController.m in Sources */,
 				587563DE2BF7748300287E3C /* ZXNavHistoryStackContentView.m in Sources */,
 				587563D92BF7748300287E3C /* UINavigationController+ZXNavBarAllHiddenExtension.m in Sources */,
 			);

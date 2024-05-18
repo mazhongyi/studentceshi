@@ -91,7 +91,8 @@
     titleLabel.numberOfLines = 1;
     
     UIView* lineView = [[UIView alloc]init];
-    lineView.backgroundColor = ZXNavDefalutLineColor;
+   // lineView.backgroundColor = ZXNavDefalutLineColor;
+    lineView.backgroundColor = [UIColor redColor];
     [self addSubview:leftBtn];
     [self addSubview:rightBtn];
     [self addSubview:subRightBtn];

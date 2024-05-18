@@ -11,9 +11,11 @@
 
 #import "ZXNavigationBarNavigationController.h"
 #import "CYLHomeViewController.h"
+//#import "CustomNavBarController.h"
+#import "WRNavigationBar.h"
 
-
-
+UIColor *MainNavBarColor = nil;
+UIColor *MainViewColor = nil;
 @interface AppDelegate ()
 
 @end
@@ -34,16 +36,50 @@
 //    [self.window makeKeyAndVisible];
     //    ZXNavigationBarNavigationController *nav = [[ZXNavigationBarNavigationController alloc]initWithRootViewController:vc];
     
+    
+//    [self setUpNavigationBarAppearance];
+//    //这个方法需要在导航控制器加载前调用
+//     [UINavigationController zx_hideAllNavBar];
     UIWindow *window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     CustomTabBarController *vc = [[CustomTabBarController alloc]init];
 //    ZXNavigationBarNavigationController *nav = [[ZXNavigationBarNavigationController alloc]initWithRootViewController:vc];
     window.rootViewController = vc;
     [window makeKeyAndVisible];
     self.window = window;
+    [self setNavBarAppearence];
     return YES;
   
 }
 
+- (void)setNavBarAppearence
+{
+//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor purpleColor]}];
+//    [UINavigationBar appearance].tintColor = [UIColor yellowColor];
+//    [UINavigationBar appearance].barTintColor = [UIColor redColor];
+    
+    MainNavBarColor = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
+    MainViewColor   = [UIColor colorWithRed:126/255.0 green:126/255.0 blue:126/255.0 alpha:1];
+    
+    // 设置是 广泛使用WRNavigationBar，还是局部使用WRNavigationBar，目前默认是广泛使用
+    [WRNavigationBar wr_widely];
+    [WRNavigationBar wr_setBlacklist:@[@"SpecialController",
+                                       @"TZPhotoPickerController",
+                                       @"TZGifPhotoPreviewController",
+                                       @"TZAlbumPickerController",
+                                       @"TZPhotoPreviewController",
+                                       @"TZVideoPlayerController"]];
+    
+    // 设置导航栏默认的背景颜色
+    [WRNavigationBar wr_setDefaultNavBarBarTintColor:MainNavBarColor];
+    // 设置导航栏所有按钮的默认颜色
+    [WRNavigationBar wr_setDefaultNavBarTintColor:[UIColor whiteColor]];
+    // 设置导航栏标题默认颜色
+    [WRNavigationBar wr_setDefaultNavBarTitleColor:[UIColor whiteColor]];
+    // 统一设置状态栏样式
+    [WRNavigationBar wr_setDefaultStatusBarStyle:UIStatusBarStyleLightContent];
+    // 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
+    [WRNavigationBar wr_setDefaultNavBarShadowImageHidden:YES];
+}
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmethod-signatures"
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
@@ -83,7 +119,7 @@
 //        apperance.shadowColor = nil;
 //        
 //        [apperance setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-//        self.
+//        
 //        
 //        
 //    }

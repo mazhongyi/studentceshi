@@ -1,32 +1,24 @@
 //
-//  CYLHomeViewController.m
-//  CYLTabBarController
+//  threeViewController.m
+//  opsddddddd
 //
-//  v1.21.x Created by 微博@iOS程序犭袁 ( http://weibo.com/luohanchenyilong/ ) on 10/20/15.
-//  Copyright © 2018 https://github.com/ChenYilong . All rights reserved.
+//  Created by mazhongyi on 2024/5/18.
 //
 
-#import "CYLHomeViewController.h"
-//#import "CYLTabBarControllerConfig.h"
-//#import "CYLPlusButtonSubclass.h"
-#import "MainTabBarController.h"
-//#import "CYLMainRootViewController.h"
-//#import <MJRefresh/MJRefresh.h>
-@interface CYLHomeViewController() <UITableViewDataSource, UITableViewDelegate>
+#import "threeViewController.h"
 
+@interface threeViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *data;
-
 @end
-@implementation CYLHomeViewController
 
+@implementation threeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     // 初始化示例数据
-    self.data = @[@"Item 1", @"Item 2", @"Item 3", @"Item 4", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5"];
+    self.data = @[@"Item 2", @"Item 2", @"Item 3", @"Item 4", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5", @"Item 5"];
     
     // 创建并设置TableView
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
@@ -36,7 +28,7 @@
     [self.view addSubview:self.tableView];
     
     
-//    [UITabBar appearance].translucent = false;
+    [UITabBar appearance].translucent = false;
 }
 
 #pragma mark - UITableViewDataSource Methods
@@ -87,9 +79,9 @@
 //    [super viewDidLoad];
 //    self.zx_navBarBackgroundColor = [UIColor orangeColor];
 //    self.view.backgroundColor = [UIColor greenColor];
-//    
-//    
-//    
+//
+//
+//
 ////    self.view.backgroundColor = [UIColor whiteColor];
 ////    self.navigationItem.title = @"首页(3)"; //✅sets navigation bar title.The right way to set the title of the navigation
 ////    self.tabBarItem.title = @"首页";   //❌sets tab bar title. Even the `tabBarItem.title` changed, this will be ignored in tabbar.
@@ -105,7 +97,7 @@
 ////            [weakSelf.tableView.mj_header endRefreshing];
 ////        });
 ////    }];
-//    
+//
 ////    if (@available(iOS 15.0, *)) {
 ////            UINavigationBarAppearance *appperance = [[UINavigationBarAppearance alloc] init];
 ////            //添加背景色
@@ -180,9 +172,9 @@
 //    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //    NSNumber *badgeNumber = @(indexPath.row);
 //    self.navigationItem.title = [NSString stringWithFormat:@"首页(%@)", badgeNumber]; //sets navigation bar title.
-//    
+//
 ////    [self.navigationController.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%@", badgeNumber]];
-//    
+//
 ////    CYLTabBarControllerConfig *tabBarControllerConfig = [[CYLTabBarControllerConfig alloc] init];
 ////    CYLTabBarController *tabBarController = tabBarControllerConfig.tabBarController;
 ////    tabBarController.delegate = self;
@@ -203,3 +195,4 @@
 //}
 
 @end
+

@@ -1,16 +1,15 @@
 //
-//  secondViewController.h
+//  threeViewController.h
 //  opsddddddd
 //
-//  Created by mazhongyi on 2024/5/17.
+//  Created by mazhongyi on 2024/5/18.
 //
 
 #import <UIKit/UIKit.h>
 #import "ZXNavigationBarController.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
-@interface secondViewController : UIViewController
+@interface threeViewController : UIViewController
 
 @end
 
