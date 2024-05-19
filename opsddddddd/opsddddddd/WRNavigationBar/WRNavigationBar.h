@@ -16,6 +16,10 @@
 + (CGFloat)tabBarHeight;
 + (CGFloat)screenWidth;
 + (CGFloat)screenHeight;
+/**
+ 导航栏背景渐变的CAGradientLayer
+ */
+@property (weak, nonatomic, nullable)CAGradientLayer *zx_gradientLayer;
 @end
 
 
@@ -51,6 +55,11 @@
 /** set default shadowImage isHidden of UINavigationBar */
 + (void)wr_setDefaultNavBarShadowImageHidden:(BOOL)hidden;
 
+
++(void)zx_setNavGradientBacFrom:(UIColor *)fromColor to:(UIColor *)toColor;
+
+// 声明设置渐变背景的方法
+- (void)setGradientBackgroundWithColors:(NSArray<UIColor *> *)colors;
 @end
 
 

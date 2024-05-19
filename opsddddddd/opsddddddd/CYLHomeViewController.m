@@ -36,6 +36,8 @@
     [self.view addSubview:self.tableView];
     
     
+    
+    
 //    [UITabBar appearance].translucent = false;
 }
 

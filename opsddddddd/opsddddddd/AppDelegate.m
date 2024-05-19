@@ -69,7 +69,7 @@ UIColor *MainViewColor = nil;
                                        @"TZPhotoPreviewController",
                                        @"TZVideoPlayerController"]];
     
-    // 设置导航栏默认的背景颜色
+//    // 设置导航栏默认的背景颜色
     [WRNavigationBar wr_setDefaultNavBarBarTintColor:MainNavBarColor];
     // 设置导航栏所有按钮的默认颜色
     [WRNavigationBar wr_setDefaultNavBarTintColor:[UIColor whiteColor]];
@@ -79,6 +79,21 @@ UIColor *MainViewColor = nil;
     [WRNavigationBar wr_setDefaultStatusBarStyle:UIStatusBarStyleLightContent];
     // 如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
     [WRNavigationBar wr_setDefaultNavBarShadowImageHidden:YES];
+    
+    //[WRNavigationBar zx_setNavGradientBacFrom:[UIColor magentaColor] to:[UIColor cyanColor]];
+  //  [WRNavigationBar zx_setNavGradientBacFrom:
+    
+  //  - (void)zx_setNavGradientBacFrom:(UIColor *)fromColor to:(UIColor *)toColor
+    
+    
+    WRNavigationBar *bar = [[WRNavigationBar alloc]init];
+    // 定义渐变颜色
+        UIColor *color1 = [UIColor redColor];
+        UIColor *color2 = [UIColor blueColor];
+        
+        // 设置导航栏的渐变背景
+//        WRNavigationBar *navigationBar = (WRNavigationBar *)self.navigationController.navigationBar;
+        [bar setGradientBackgroundWithColors:@[color1, color2]];
 }
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmethod-signatures"

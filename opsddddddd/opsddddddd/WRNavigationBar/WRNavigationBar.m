@@ -108,6 +108,40 @@
     return height;
 }
 
+//- (void)zx_setNavGradientBacFrom:(UIColor *)fromColor to:(UIColor *)toColor{
+////    if(self.zx_navBar){
+//        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+//        gradientLayer.startPoint = CGPointMake(0, 0);
+//        gradientLayer.endPoint = CGPointMake(1, 0);
+//        gradientLayer.colors = [NSArray arrayWithObjects:(id)fromColor.CGColor,(id)toColor.CGColor,nil];
+////    if(zx_gradientLayer){
+////        if(_zx_gradientLayer){
+////            [_zx_gradientLayer removeFromSuperlayer];
+////        }
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(CGFLOAT_MIN * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [self.layer insertSublayer:gradientLayer atIndex:0];
+//        });
+//    
+//       // self.zx_navBar.zx_gradientLayer = gradientLayer;
+//  //  }
+//    
+//}
+
+//- (void)setZx_gradientLayer:(CAGradientLayer *)zx_gradientLayer{
+//    if(!zx_gradientLayer && _zx_gradientLayer){
+//        [_zx_gradientLayer removeFromSuperlayer];
+//    }
+//    if(zx_gradientLayer){
+//        if(_zx_gradientLayer){
+//            [_zx_gradientLayer removeFromSuperlayer];
+//        }
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(CGFLOAT_MIN * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [self.layer insertSublayer:zx_gradientLayer atIndex:0];
+//        });
+//    }
+//    _zx_gradientLayer = zx_gradientLayer;
+//}
+
 
 @end
 
@@ -128,6 +162,10 @@ static char kWRDefaultNavBarTintColorKey;
 static char kWRDefaultNavBarTitleColorKey;
 static char kWRDefaultStatusBarStyleKey;
 static char kWRDefaultNavBarShadowImageHiddenKey;
+
+static char kGradientLayerKey;
+
+
 
 + (BOOL)isLocalUsed {
     id isLocal = objc_getAssociatedObject(self, &kWRIsLocalUsedKey);
@@ -243,6 +281,70 @@ static char kWRDefaultNavBarShadowImageHiddenKey;
 //透明度渐变过程
 + (CGFloat)middleAlpha:(CGFloat)fromAlpha toAlpha:(CGFloat)toAlpha percent:(CGFloat)percent {
     return fromAlpha + (toAlpha - fromAlpha) * percent;
+}
+
++(void)zx_setNavGradientBacFrom:(UIColor *)fromColor to:(UIColor *)toColor{
+//    if(self.zx_navBar){
+        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+        gradientLayer.startPoint = CGPointMake(0, 0);
+        gradientLayer.endPoint = CGPointMake(1, 0);
+        gradientLayer.colors = [NSArray arrayWithObjects:(id)fromColor.CGColor,(id)toColor.CGColor,nil];
+    
+   
+//    if(zx_gradientLayer){
+//        if(_zx_gradientLayer){
+//            [_zx_gradientLayer removeFromSuperlayer];
+//        }
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(CGFLOAT_MIN * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//          //  
+//            
+//            [self.
+//        });
+    
+
+    
+}
+
+//- (void)zx_setNavGradientBacFrom:(UIColor *)fromColor to:(UIColor *)toColor{
+//    if(self.zx_navBar){
+//        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+//        gradientLayer.startPoint = CGPointMake(0, 0);
+//        gradientLayer.endPoint = CGPointMake(1, 0);
+//        gradientLayer.colors = [NSArray arrayWithObjects:(id)fromColor.CGColor,(id)toColor.CGColor,nil];
+//        self.zx_navBar.zx_gradientLayer = gradientLayer;
+//    }
+//    
+//}
+
+- (void)setGradientBackgroundWithColors:(NSArray<UIColor *> *)colors {
+    // 移除任何现有的渐变层
+      CAGradientLayer *existingLayer = objc_getAssociatedObject(self, &kGradientLayerKey);
+      if (existingLayer) {
+          [existingLayer removeFromSuperlayer];
+      }
+
+      // 创建一个新的渐变层
+      CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+      gradientLayer.frame = self.bounds;
+
+      // 将 UIColor 转换为 CGColor
+      NSMutableArray *cgColors = [NSMutableArray array];
+      for (UIColor *color in colors) {
+          [cgColors addObject:(__bridge id)color.CGColor];
+      }
+      gradientLayer.colors = cgColors;
+
+      // 可选：设置渐变方向
+      gradientLayer.startPoint = CGPointMake(0.0, 0.5);
+      gradientLayer.endPoint = CGPointMake(1.0, 0.5);
+
+      // 将渐变层插入到导航栏图层的底部
+      [self.layer insertSublayer:gradientLayer atIndex:0];
+
+      // 使用关联对象存储渐变层
+      objc_setAssociatedObject(self, &kGradientLayerKey, gradientLayer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  
+
 }
 
 @end
